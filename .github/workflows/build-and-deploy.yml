@@ -1,35 +1,35 @@
-name: Node.js + Next.js Build and Deploy
+name: SvelteKit Build and Deploy
 permissions:
   contents: write
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-      # https://github.com/actions/checkout
-      - uses: actions/checkout@v3
-        
-      # a standard step for GitHub actions on Node
-      # https://github.com/actions/setup-node
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
         with:
-          # update the Node version to meet your needs
-          node-version: 16
-          cache: npm
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Build
         run: |
-          npm ci
-          npm run build
-          npm run export
-          touch out/.nojekyll
+          pnpm run build
+          touch build/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: out
+          folder: build

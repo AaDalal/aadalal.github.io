@@ -1,9 +1,9 @@
-import rehypeKatex from 'rehype-katex'
-import rehypeStringify from 'rehype-stringify'
-import remarkMath from 'remark-math'
-import remarkParse from 'remark-parse'
-import remarkRehype from 'remark-rehype/lib'
-import { unified } from 'unified'
+import rehypeKatex from 'rehype-katex';
+import rehypeStringify from 'rehype-stringify';
+import remarkMath from 'remark-math';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import { unified } from 'unified';
 
 export default async function markdownToHtml(markdown) {
   const result = await unified()
