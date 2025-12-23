@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Navbar from '$lib/components/Navbar.svelte';
 	import PostBody from '$lib/components/PostBody.svelte';
 	import type { PageData } from './$types';
 
@@ -19,6 +18,5 @@
 </svelte:head>
 
 <main>
-	<Navbar currentPost={post} posts={allPosts} />
 	<PostBody content={post.content ?? ''} title={post.title ?? ''} date={post.date ?? ''} />
 </main>

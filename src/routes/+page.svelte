@@ -1,17 +1,11 @@
 <script lang="ts">
-	import Navbar from '$lib/components/Navbar.svelte';
 	import { linkFromSlug } from '$lib/postHelpers';
 	import fuzzysort from 'fuzzysort';
 	import type { PageData } from './$types';
+  import DarkModeSwitch from '$lib/components/DarkModeSwitch.svelte';
 
 	let { data }: { data: PageData } = $props();
 	const posts = $derived(data.posts);
-
-	const mockPost = {
-		title: '',
-		slug: '',
-		date: '3000-11-11'
-	};
 
 	let search = $state<string>('');
 
@@ -31,7 +25,6 @@
 </svelte:head>
 
 <main>
-	<Navbar currentPost={mockPost} posts={[mockPost, ...posts]} />
 	<div class="max-w-2xl mx-auto px-3 my-4">
 		<div class="italic mt-10 mb-5">
 			&nbsp;
@@ -39,6 +32,9 @@
 		<div class="text-8xl w-3/4 font-junicode">Hi, I'm Aagam.</div>
 		<div class="mb-8 text-xl italic"></div>
 		<div class="font-bold text-xl opacity-75 flex flex-col gap-4">
+			<div class="h-8 w-8">
+				<DarkModeSwitch />
+			</div>
 			<a href="https://www.linkedin.com/in/aagam-dalal/" class="flex flex-row gap-2 items-center">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
