@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 
-	let isDarkMode = $state(false);
-	let mounted = $state(false);
+	let isDarkMode = $state<boolean>(false);
+	let mounted = $state<boolean>(false);
 
-	const setIsDarkOrLight = (mode) => {
+	const setIsDarkOrLight = (mode: boolean): void => {
 		if (!browser) return;
 		if (mode) {
 			localStorage.theme = 'dark';
@@ -16,7 +16,7 @@
 		}
 	};
 
-	const checkDarkMode = () => {
+	const checkDarkMode = (): boolean => {
 		if (!browser) return false;
 		return (
 			localStorage.theme === 'dark' ||
@@ -30,14 +30,14 @@
 		mounted = true;
 	});
 
-	const toggle = () => {
+	const toggle = (): void => {
 		isDarkMode = !isDarkMode;
 		setIsDarkOrLight(isDarkMode);
 	};
 
-	let size = 24;
-	let moonColor = 'white';
-	let sunColor = 'black';
+	const size: number = 24;
+	const moonColor: string = 'white';
+	const sunColor: string = 'black';
 </script>
 
 {#if mounted}

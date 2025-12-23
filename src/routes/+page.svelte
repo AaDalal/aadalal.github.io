@@ -1,9 +1,10 @@
-<script>
+<script lang="ts">
 	import Navbar from '$lib/components/Navbar.svelte';
-	import { linkFromSlug } from '$lib/postHelpers.js';
+	import { linkFromSlug } from '$lib/postHelpers';
 	import fuzzysort from 'fuzzysort';
+	import type { PageData } from './$types';
 
-	let { data } = $props();
+	let { data }: { data: PageData } = $props();
 	const posts = $derived(data.posts);
 
 	const mockPost = {
@@ -12,15 +13,15 @@
 		date: '3000-11-11'
 	};
 
-	let search = $state('');
+	let search = $state<string>('');
 
 	const filteredPosts = $derived(
 		search
 			? fuzzysort
 					.go(search, posts, {
-						keys: ['title', 'preview', 'tags', 'date', 'slug', 'tags']
+						keys: ['title', 'preview', 'tags', 'date', 'slug', 'tags'] as any
 					})
-					.map(({ obj }) => obj)
+					.map(({ obj }: any) => obj)
 			: posts
 	);
 </script>
@@ -69,14 +70,14 @@
 				placeholder="Search"
 				bind:value={search}
 			/>
-			{#each filteredPosts as { title, slug, date, preview } (slug)}
+			{#each filteredPosts as { title, slug, date, preview } (slug ?? '')}
 				<div class="border-b-2">
 					<div class="flex flex-row gap-2 items-center mb-1">
-						<a class="text-2xl" href={linkFromSlug(slug)}>
-							{title}
+						<a class="text-2xl" href={linkFromSlug(slug ?? '')}>
+							{title ?? ''}
 						</a>
 						<div class="opacity-50">
-							{date}
+							{date ?? ''}
 						</div>
 					</div>
 					<div>

@@ -1,5 +1,12 @@
-<script>
-	let { content, title, date, className = '' } = $props();
+<script lang="ts">
+	interface Props {
+		content: string;
+		title: string;
+		date: string;
+		className?: string;
+	}
+
+	let { content, title, date, className = '' }: Props = $props();
 </script>
 
 <div class={className}>
