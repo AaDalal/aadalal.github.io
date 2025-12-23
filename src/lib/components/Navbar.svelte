@@ -24,7 +24,6 @@
 	<div
 		class="col-span-8 md:col-span-2 p-4 border-2 flex flex-row justify-between items-center flex-shrink"
 	>
-		<a class="font-bold text-xl" href="/">aadalal</a>
 		<DarkModeSwitch />
 	</div>
 	<div
