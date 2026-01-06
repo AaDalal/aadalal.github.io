@@ -5,8 +5,13 @@
 @layer base {
 	@font-face {
 		font-family: 'Junicode';
-		src: url(/fonts/junicodetwobeta-condenseditalic-webfont.woff) format('woff');
+		src: url(/fonts/Junicode/junicodetwobeta-condenseditalic-webfont.woff) format('woff');
 		font-weight: 400;
+	}
+
+	@font-face {
+		font-family: 'Lilex';
+		src: url(/fonts/Lilex/variable/Lilex[wght].ttf) format('ttf');
 	}
 }
 
