@@ -5,38 +5,38 @@
 		<link rel="icon" href="../favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link href="../_app/immutable/assets/0.DrWrC8pZ.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.B5CHGGkT.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DQBx-NQ-.js">
+		<link href="../_app/immutable/assets/0.BiQvnwBc.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.CQmT-DuJ.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DHXDdANz.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/Bc2H-4bz.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/CSA2o1oM.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.HPEBRSZ1.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.B0e8n7kc.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/DHsZQ_kw.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/Dg0N1nV9.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/B4EAf2zX.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/D3l4LuWx.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.BAjjyLqe.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.CM5dGPRG.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/ay3OoWZh.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/3.CSfcLR03.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/3.DdRNSHfR.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/9kwSTKJC.js"><!--xod7dh--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"/><!----><title>Consistent Hashing | aagam's blog</title>
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents"><!--[--><!--[--><!----><!--[--><!----><main><div><article class="max-w-2xl mx-auto px-3 mt-4"><header><div class="italic opacity-75 mt-10 mb-5"><time>2023-10-26</time></div> <h1 class="text-8xl w-3/4 font-junicode mb-10">Consistent Hashing</h1></header> <section class="prose dark:prose-invert prose-a:text-blue-600 dark:prose-a:text-blue-500 hover:prose-a:text-blue-900 hover:dark:prose-a:text-blue-800 dark:prose-pre:border-gray-900 dark:prose-pre:border"><!----><p>Recently I've been reading about the Chord distributed hash table network for a class. The goal of Chord is to map any key (e.g., a file name) to the server that is responsible. This mapping has to be maintained without any centralization: you can ask any server in the network for which other server is responsible for a key, and get an answer, even as servers enter and leave the network as they please. At the core of Chord and most other DHTs is consistent hashing, a beautifully simple idea.</p>
+		<div style="display: contents"><!--[--><!--[--><!----><!--[--><!----><main><div><article class="max-w-2xl mx-auto px-3 mt-4"><header><div class="min-h-20 py-2 flex items-end"><a href="/">← Back</a></div> <div class="dark:bg-orange-800 bg-orange-900/60"><div class="italic opacity-75 mb-2 ml-2"><time>2023-10-26</time></div> <h1 class="text-8xl leading-none w-3/4 font-junicode mb-10 ml-1"><span>Consistent Hashing</span></h1></div></header> <section class="prose dark:prose-invert prose-a:text-blue-600 dark:prose-a:text-blue-500 hover:prose-a:text-blue-900 hover:dark:prose-a:text-blue-800 dark:prose-pre:border-gray-900 dark:prose-pre:border leading-1 first-letter:text-5xl first-letter:mr-2 first-letter:leading-none first-letter:float-left first-letter:border-solid first-letter:px-1"><!----><p>Recently I've been reading about the Chord distributed hash table network for a class. The goal of Chord is to map any key (e.g., a file name) to the server that is responsible. This mapping has to be maintained without any centralization: you can ask any server in the network for which other server is responsible for a key, and get an answer, even as servers enter and leave the network as they please. At the core of Chord and most other DHTs is consistent hashing, a beautifully simple idea.</p>
 <p>In order for the system to be distributed in an appreciable way, the mapping from keys to servers needs to be somewhat even; in other words any arbitrary set of keys are likely to be evenly distributed among the servers. At the same time, this mapping needs to be consistent: <strong>all</strong> servers need to agree on which server is responsible for key, even as servers come and go and key responsibility is reassigned.</p>
 <p>These two requirements are the problem that consistent hashing solves. It provides a way of taking hash values, which are uniformly distributed, and mappping them to servers in a way that is consistent no matter which server is doing the mapping. This is in contrast to the way we do hashing in a hashtable, which requires us to <em>mod the hash by the size of the table</em> and thereby introduces a dependence on the number of servers which are in the network at any time. We have no guarantees about the size or composition of the network in the distributed situation, so consistent hashing solves the problem in a way that traditional hashtables can't.</p>
 <p>Conceptually, there is no big jump here. We merely compute the hash for each key and then find some consistent way of mapping that to a node. In the case of Chord, we create this assignment by hashing the server identifiers, and then mapping each key hash to the closest succeeding key hash. In this way, each node that knows the other nodes in the network can map a key to a node. No matter if a node leaves or enters, the node will continue to be able to map the key. And no matter how nodes enter and leave, the mapping will be close to uniform. These are powerful properties.</p><!----></section></article></div><!----></main><!----><!--]--><!----><!--]--> <!--[!--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_sog066 = {
+					__sveltekit_3cmagj = {
 						base: new URL("..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../_app/immutable/entry/start.B5CHGGkT.js"),
-						import("../_app/immutable/entry/app.HPEBRSZ1.js")
+						import("../_app/immutable/entry/start.CQmT-DuJ.js"),
+						import("../_app/immutable/entry/app.B0e8n7kc.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 3],
