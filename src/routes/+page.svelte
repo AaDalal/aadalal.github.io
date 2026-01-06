@@ -69,14 +69,14 @@
 			{#each filteredPosts as { title, slug, date, preview } (slug ?? '')}
 				<div class="border-b-2 py-1">
 					<div class="flex flex-row gap-4 items-center mb-1">
-						<a class="text-2xl" href={linkFromSlug(slug ?? '')}>
+						<a class="text-xl" href={linkFromSlug(slug ?? '')}>
 							{title ?? ''}
 						</a>
 						<div class="opacity-50">
 							{date ?? ''}
 						</div>
 					</div>
-					<div class="opacity-75">
+					<div class="opacity-75 leading-1">
 						{preview}
 					</div>
 				</div>
