@@ -67,8 +67,8 @@
 				bind:value={search}
 			/>
 			{#each filteredPosts as { title, slug, date, preview } (slug ?? '')}
-				<div class="border-b-2">
-					<div class="flex flex-row gap-2 items-center mb-1">
+				<div class="border-b-2 py-1">
+					<div class="flex flex-row gap-4 items-center mb-1">
 						<a class="text-2xl" href={linkFromSlug(slug ?? '')}>
 							{title ?? ''}
 						</a>
@@ -76,7 +76,7 @@
 							{date ?? ''}
 						</div>
 					</div>
-					<div>
+					<div class="opacity-75">
 						{preview}
 					</div>
 				</div>
