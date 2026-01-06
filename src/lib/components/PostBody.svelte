@@ -18,13 +18,11 @@
 				</a>	
 			</div>
 			<div class="dark:bg-orange-800 bg-orange-900/60">
-				<div class="italic opacity-75 mb-2 ml-2">
+				<div class="italic opacity-75 mb-2 ml-2 bg-transparent">
 					<time>{date}</time>
 				</div>
-				<h1 class="text-8xl leading-none w-3/4 font-junicode mb-10 ml-1">
-					<span>
+				<h1 class="text-8xl leading-none w-3/4 font-junicode mb-10 ml-1 bg-none">
 						{title}
-					</span>
 				</h1>
 			</div>
 		</header>
