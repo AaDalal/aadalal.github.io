@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import MicroblogCard from '$lib/components/MicroblogCard.svelte';
 
 	let { data }: { data: PageData } = $props();
 	const microblogs = $derived(data.microblogs);
@@ -17,18 +18,14 @@
 		<div class="text-8xl w-3/4 font-junicode mb-8">Thoughts</div>
 		<div class="flex flex-col gap-6">
 			{#each microblogs as microblog}
-				<div class="dark:bg-orange-800 bg-orange-900/60 p-6">
-					<div class="prose dark:prose-invert max-w-none">
-						{@html microblog.htmlContent}
-					</div>
-					<div class="text-right text-sm opacity-70 mt-4">
-						{new Date(microblog.date || '').toLocaleDateString('en-US', {
-							year: 'numeric',
-							month: 'long',
-							day: 'numeric'
-						})}
-					</div>
-				</div>
+				<MicroblogCard
+					{microblog}
+					htmlContent={microblog.htmlContent}
+					showFullContent={true}
+					href="/t/{microblog.slug}"
+					containerClass="p-6"
+					dateClass="text-sm opacity-70 mt-4"
+				/>
 			{/each}
 		</div>
 	</div>

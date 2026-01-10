@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Post } from '$lib/api.server';
+	import MicroblogCard from './MicroblogCard.svelte';
 
 	export let microblogs: Post[] = [];
 
@@ -8,24 +9,15 @@
 </script>
 
 <div class="mb-8 w-full max-w-4xl">
-	<h2 class="text-2xl font-junicode mb-4">Recent Thoughts</h2>
-	<div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory carousel-scrollbar">
+	<h2 class="text-4xl font-junicode mb-4 mt-6">Recent Thoughts</h2>
+	<div class="flex gap-4 overflow-x-auto snap-x snap-mandatory carousel-scrollbar">
 		{#each recentMicroblogs as microblog}
-			<a
+			<MicroblogCard
+				{microblog}
 				href="/t/{microblog.slug}"
-				class="flex-shrink-0 w-72 h-48 dark:bg-orange-800 bg-orange-900/60 p-4 flex flex-col justify-between hover:opacity-80 transition-opacity snap-start"
-			>
-				<div class="overflow-hidden flex-1">
-					<p class="text-sm line-clamp-6">{microblog.content?.substring(0, 200) || ''}</p>
-				</div>
-				<div class="text-right text-xs opacity-75 mt-2">
-					{new Date(microblog.date || '').toLocaleDateString('en-US', {
-						year: 'numeric',
-						month: 'short',
-						day: 'numeric'
-					})}
-				</div>
-			</a>
+				containerClass="flex-shrink-0 w-72 h-48 hover:opacity-80 transition-opacity snap-start"
+				contentClass="line-clamp-6"
+			/>
 		{/each}
 		<a
 			href="/t"
