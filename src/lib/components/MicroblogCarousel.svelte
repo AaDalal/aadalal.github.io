@@ -9,7 +9,7 @@
 
 <div class="mb-8 w-full max-w-4xl">
 	<h2 class="text-2xl font-junicode mb-4">Recent Thoughts</h2>
-	<div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
+	<div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory carousel-scrollbar">
 		{#each recentMicroblogs as microblog}
 			<a
 				href="/t/{microblog.slug}"
@@ -35,3 +35,40 @@
 		</a>
 	</div>
 </div>
+
+<style>
+	.carousel-scrollbar::-webkit-scrollbar {
+		height: 8px;
+	}
+
+	.carousel-scrollbar::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	.carousel-scrollbar::-webkit-scrollbar-thumb {
+		background: rgb(194 120 3 / 0.4);
+		border-radius: 4px;
+	}
+
+	.carousel-scrollbar::-webkit-scrollbar-thumb:hover {
+		background: rgb(194 120 3 / 0.6);
+	}
+
+	:global(.dark) .carousel-scrollbar::-webkit-scrollbar-thumb {
+		background: rgb(234 145 28 / 0.4);
+	}
+
+	:global(.dark) .carousel-scrollbar::-webkit-scrollbar-thumb:hover {
+		background: rgb(234 145 28 / 0.6);
+	}
+
+	/* Firefox scrollbar styling */
+	.carousel-scrollbar {
+		scrollbar-width: thin;
+		scrollbar-color: rgb(194 120 3 / 0.4) transparent;
+	}
+
+	:global(.dark) .carousel-scrollbar {
+		scrollbar-color: rgb(234 145 28 / 0.4) transparent;
+	}
+</style>
