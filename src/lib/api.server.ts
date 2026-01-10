@@ -2,7 +2,8 @@ import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 
-const postsDirectory = join(process.cwd(), '_posts');
+export const blogPostsDirectory = join(process.cwd(), '_posts');
+export const tinyPostDirectory = join(process.cwd(), "_tiny_thoughts")
 
 export interface Post {
 	slug?: string;
@@ -13,11 +14,11 @@ export interface Post {
 	[key: string]: any;
 }
 
-export function getPostSlugs(): string[] {
-	return fs.readdirSync(postsDirectory);
+function getPostSlugs(): string[] {
+	return fs.readdirSync(blogPostsDirectory);
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []): Post {
+export function getPostBySlug(slug: string, fields: string[] = [], postsDirectory = blogPostsDirectory): Post {
 	const realSlug = slug.replace(/\.md$/, '');
 	const fullPath = join(postsDirectory, `${realSlug}.md`);
 	const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -47,7 +48,7 @@ export function getPostBySlug(slug: string, fields: string[] = []): Post {
 	return items;
 }
 
-export function getAllPosts(fields: string[] = []): Post[] {
+export function getAllPosts(fields: string[] = [], postsDirectory = blogPostsDirectory): Post[] {
 	const slugs = getPostSlugs();
 	const posts = slugs
 		.map((slug) => getPostBySlug(slug, fields))
