@@ -38,7 +38,7 @@
 
 <style>
 	.carousel-scrollbar::-webkit-scrollbar {
-		height: 8px;
+		height: 12px;
 	}
 
 	.carousel-scrollbar::-webkit-scrollbar-track {
@@ -46,29 +46,29 @@
 	}
 
 	.carousel-scrollbar::-webkit-scrollbar-thumb {
-		background: rgb(194 120 3 / 0.4);
-		border-radius: 4px;
+		background: rgba(0, 0, 0, 0.2);
+		border-radius: 6px;
 	}
 
 	.carousel-scrollbar::-webkit-scrollbar-thumb:hover {
-		background: rgb(194 120 3 / 0.6);
+		background: rgba(0, 0, 0, 0.3);
 	}
 
 	:global(.dark) .carousel-scrollbar::-webkit-scrollbar-thumb {
-		background: rgb(234 145 28 / 0.4);
+		background: rgba(255, 255, 255, 0.3);
 	}
 
 	:global(.dark) .carousel-scrollbar::-webkit-scrollbar-thumb:hover {
-		background: rgb(234 145 28 / 0.6);
+		background: rgba(255, 255, 255, 0.4);
 	}
 
 	/* Firefox scrollbar styling */
 	.carousel-scrollbar {
 		scrollbar-width: thin;
-		scrollbar-color: rgb(194 120 3 / 0.4) transparent;
+		scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
 	}
 
 	:global(.dark) .carousel-scrollbar {
-		scrollbar-color: rgb(234 145 28 / 0.4) transparent;
+		scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 	}
 </style>
