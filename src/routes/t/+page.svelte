@@ -17,7 +17,7 @@
 		<div class="text-8xl w-3/4 font-junicode mb-8">Thoughts</div>
 		<div class="flex flex-col gap-6">
 			{#each microblogs as microblog}
-				<div class="dark:bg-orange-800 bg-orange-900/60 p-6 rounded-lg">
+				<div class="dark:bg-orange-800 bg-orange-900/60 p-6">
 					<div class="prose dark:prose-invert max-w-none">
 						{@html microblog.htmlContent}
 					</div>

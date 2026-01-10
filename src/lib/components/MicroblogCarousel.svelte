@@ -13,7 +13,7 @@
 		{#each recentMicroblogs as microblog}
 			<a
 				href="/t/{microblog.slug}"
-				class="flex-shrink-0 w-72 h-48 dark:bg-orange-800 bg-orange-900/60 p-4 rounded-lg flex flex-col justify-between hover:opacity-80 transition-opacity snap-start"
+				class="flex-shrink-0 w-72 h-48 dark:bg-orange-800 bg-orange-900/60 p-4 flex flex-col justify-between hover:opacity-80 transition-opacity snap-start"
 			>
 				<div class="overflow-hidden flex-1">
 					<p class="text-sm line-clamp-6">{microblog.content?.substring(0, 200) || ''}</p>
@@ -29,7 +29,7 @@
 		{/each}
 		<a
 			href="/t"
-			class="flex-shrink-0 w-72 h-48 dark:bg-orange-800 bg-orange-900/60 p-4 rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity snap-start"
+			class="flex-shrink-0 w-72 h-48 dark:bg-orange-800 bg-orange-900/60 p-4 flex items-center justify-center hover:opacity-80 transition-opacity snap-start"
 		>
 			<span class="text-2xl font-junicode">see all →</span>
 		</a>
