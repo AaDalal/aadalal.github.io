@@ -3,9 +3,11 @@
 	import fuzzysort from 'fuzzysort';
 	import type { PageData } from './$types';
   import DarkModeSwitch from '$lib/components/DarkModeSwitch.svelte';
+	import MicroblogCarousel from '$lib/components/MicroblogCarousel.svelte';
 
 	let { data }: { data: PageData } = $props();
 	const posts = $derived(data.posts);
+	const microblogs = $derived(data.microblogs);
 
 	let search = $state<string>('');
 
@@ -60,6 +62,7 @@
 				GitHub
 			</a>
 		</div>
+		<MicroblogCarousel {microblogs} />
 		<div class="flex flex-col mt-10">
 			<input
 				class="focus:outline-none text-black bg-black/10 dark:bg-white/10 dark:text-white text-2xl py-1 border-b-2"

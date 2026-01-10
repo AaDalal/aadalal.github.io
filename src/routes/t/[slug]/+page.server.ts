@@ -26,7 +26,7 @@ export const load: PageServerLoad = async ({ params }) => {
 };
 
 export const entries: EntryGenerator = async () => {
-	const posts = getAllPosts(['slug']);
+	const posts = getAllPosts(['slug'], tinyPostDirectory);
 	return posts.map((post) => ({
 		slug: post.slug ?? ''
 	}));

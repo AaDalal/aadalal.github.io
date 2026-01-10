@@ -14,8 +14,8 @@ export interface Post {
 	[key: string]: any;
 }
 
-function getPostSlugs(): string[] {
-	return fs.readdirSync(blogPostsDirectory);
+function getPostSlugs(postsDirectory = blogPostsDirectory): string[] {
+	return fs.readdirSync(postsDirectory);
 }
 
 export function getPostBySlug(slug: string, fields: string[] = [], postsDirectory = blogPostsDirectory): Post {
@@ -49,9 +49,9 @@ export function getPostBySlug(slug: string, fields: string[] = [], postsDirector
 }
 
 export function getAllPosts(fields: string[] = [], postsDirectory = blogPostsDirectory): Post[] {
-	const slugs = getPostSlugs();
+	const slugs = getPostSlugs(postsDirectory);
 	const posts = slugs
-		.map((slug) => getPostBySlug(slug, fields))
+		.map((slug) => getPostBySlug(slug, fields, postsDirectory))
 		// sort posts by date in descending order of date (if date is present)
 		.sort((post1, post2) => ((post1.date ?? '') > (post2.date ?? '') ? -1 : 1));
 	return posts;

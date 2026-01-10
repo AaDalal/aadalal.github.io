@@ -1,4 +1,4 @@
-import { getAllPosts, type Post } from '$lib/api.server';
+import { getAllPosts, tinyPostDirectory, type Post } from '$lib/api.server';
 import markdownToHtml from '$lib/markdownToHTML.server';
 import type { PageServerLoad } from './$types';
 
@@ -19,7 +19,11 @@ export const load: PageServerLoad = async () => {
 		preview: previews[index]
 	}));
 
+	// Fetch microblogs separately
+	const microblogs = getAllPosts(['title', 'slug', 'date', 'content'], tinyPostDirectory);
+
 	return {
-		posts: postsWithPreview
+		posts: postsWithPreview,
+		microblogs
 	};
 };
