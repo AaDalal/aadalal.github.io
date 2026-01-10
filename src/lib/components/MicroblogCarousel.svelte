@@ -37,23 +37,7 @@
 </div>
 
 <style>
-	.carousel-scrollbar::-webkit-scrollbar {
-		height: 12px;
-	}
-
-	.carousel-scrollbar::-webkit-scrollbar-track {
-		background: transparent;
-	}
-
-	.carousel-scrollbar::-webkit-scrollbar-thumb {
-		background: rgba(0, 0, 0, 0.2);
-		border-radius: 6px;
-	}
-
-	.carousel-scrollbar::-webkit-scrollbar-thumb:hover {
-		background: rgba(0, 0, 0, 0.3);
-	}
-
+	/* Dark mode scrollbar styling */
 	:global(.dark) .carousel-scrollbar::-webkit-scrollbar-thumb {
 		background: rgba(255, 255, 255, 0.3);
 	}
@@ -62,12 +46,7 @@
 		background: rgba(255, 255, 255, 0.4);
 	}
 
-	/* Firefox scrollbar styling */
-	.carousel-scrollbar {
-		scrollbar-width: thin;
-		scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-	}
-
+	/* Firefox dark mode */
 	:global(.dark) .carousel-scrollbar {
 		scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 	}
