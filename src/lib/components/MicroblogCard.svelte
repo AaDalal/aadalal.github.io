@@ -7,7 +7,7 @@
 		containerClass?: string;
 		contentClass?: string;
 		dateClass?: string;
-		href?: string;
+		href: string;
 		showFullContent?: boolean;
 	}
 
@@ -17,7 +17,7 @@
 		containerClass = '',
 		contentClass = '',
 		dateClass = 'text-xs opacity-75 mt-2',
-		href = '',
+		href,
 		showFullContent = false
 	}: Props = $props();
 
@@ -28,15 +28,9 @@
 			day: 'numeric'
 		})
 	);
-
-	const Tag = $derived(href ? 'a' : 'div');
 </script>
 
-<svelte:element
-	this={Tag}
-	{href}
-	class="dark:bg-orange-800 bg-orange-900/60 p-4 flex flex-col justify-between {containerClass}"
->
+<a {href} class="dark:bg-orange-800 bg-orange-900/60 p-4 flex flex-col justify-between {containerClass}">
 	<div class="overflow-hidden flex-1 {contentClass}">
 		{#if showFullContent}
 			<div class="prose dark:prose-invert max-w-none">
@@ -49,4 +43,4 @@
 	<div class="text-right {dateClass}">
 		{dateString}
 	</div>
-</svelte:element>
+</a>
