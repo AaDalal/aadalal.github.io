@@ -1,5 +1,5 @@
 ---
-title: "its-possible-to-do-things-slowly-and-still"
+title: "It's possible to do things slowly and still"
 date: 2026-01-10
 ---
 
