@@ -1,5 +1,5 @@
 ---
-title: "we-are-always-like-fish---the-water"
+title: "We are always like fish - the water"
 date: 2026-01-10
 ---
 
