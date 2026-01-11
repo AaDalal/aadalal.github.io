@@ -5,12 +5,19 @@ import matter from 'gray-matter';
 export const blogPostsDirectory = join(process.cwd(), '_posts');
 export const tinyPostDirectory = join(process.cwd(), "_tiny_thoughts")
 
+export interface PostLink {
+	href: string;
+	link_text?: string;
+}
+
 export interface Post {
 	slug?: string;
 	title?: string;
 	date?: string;
 	content?: string;
 	tags?: string[];
+	context_for_this?: PostLink[];
+	further_thinking?: PostLink[];
 	[key: string]: any;
 }
 

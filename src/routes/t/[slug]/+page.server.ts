@@ -9,7 +9,11 @@ export const load: PageServerLoad = async ({ params }) => {
 	const { slug } = params;
 
 	try {
-		const post = getPostBySlug(slug, ['title', 'date', 'slug', 'content', 'tags'], tinyPostDirectory);
+		const post = getPostBySlug(
+			slug,
+			['title', 'date', 'slug', 'content', 'tags', 'context_for_this', 'further_thinking'],
+			tinyPostDirectory
+		);
 		const content = await markdownToHtml(post.content ?? '');
 		const allPosts = getAllPosts(['title', 'slug', 'date']);
 

@@ -9,7 +9,10 @@ export interface MicroblogWithContent extends Post {
 }
 
 export const load: PageServerLoad = async () => {
-	const microblogs = getAllPosts(['title', 'slug', 'date', 'content'], tinyPostDirectory);
+	const microblogs = getAllPosts(
+		['title', 'slug', 'date', 'content', 'context_for_this', 'further_thinking'],
+		tinyPostDirectory
+	);
 
 	// Convert content to HTML for each microblog
 	const microblogsWithHtml: MicroblogWithContent[] = await Promise.all(

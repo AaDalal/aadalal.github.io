@@ -18,5 +18,11 @@
 </svelte:head>
 
 <main>
-	<PostBody content={post.content ?? ''} title={post.title ?? ''} date={post.date ?? ''} />
+	<PostBody
+		content={post.content ?? ''}
+		title={post.title ?? ''}
+		date={post.date ?? ''}
+		context_for_this={post.context_for_this}
+		further_thinking={post.further_thinking}
+	/>
 </main>
