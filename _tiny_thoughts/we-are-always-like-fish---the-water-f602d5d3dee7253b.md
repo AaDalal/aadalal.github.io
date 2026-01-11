@@ -2,10 +2,10 @@
 title: "We are always like fish - the water"
 date: 2026-01-10
 further_thinking:
-  - link_text: "Relax for the same results - https://sive.rs/relax The"
-    href: "/t/relax-for-the-same-results---httpssiversrelax-the-bb404b8942deebb1.md"
   - link_text: "It's possible to do things slowly and still"
     href: "/t/its-possible-to-do-things-slowly-and-still-73f45c5be20b9e63.md"
+  - link_text: "Relax for the same results - https://sive.rs/relax The"
+    href: "/t/relax-for-the-same-results---httpssiversrelax-the-bb404b8942deebb1.md"
 ---
 
 We are always like fish - the water we are in imposes optimization criteria and constraints we can't detect.
