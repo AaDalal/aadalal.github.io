@@ -5,20 +5,20 @@
 		<link rel="icon" href="../favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link href="../_app/immutable/assets/0.CfxTLVOc.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.1-Px1jQ5.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BhmGcizW.js">
+		<link href="../_app/immutable/assets/0.B2qIdcSH.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.BJJhzdLd.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/CiUCc3Kv.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/WjKqBSco.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/BTykkvGJ.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.CzJCVI4t.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.B7FZuyDK.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/z7WzBOfM.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/CY9FYKcK.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/BOKyN92P.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.D0ZUXKTU.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.xI6WVgmj.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/oPucQqzi.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/3.DVGwTW3i.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/3.DL91LGBd.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/BFHx90Sw.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DXvFmYx1.js"><!--xod7dh--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"/><!----><title>Einsum | aagam's blog</title>
+		<link rel="modulepreload" href="../_app/immutable/chunks/Be_KLNhx.js"><!--xod7dh--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"/><!----><title>Einsum | aagam's blog</title>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents"><!--[--><!--[--><!----><!--[--><!----><main><div><article class="max-w-2xl mx-auto px-3 mt-4"><header><div class="min-h-20 py-2 flex items-end"><a href="/">← Back</a></div> <div class="dark:bg-orange-800 bg-orange-900/60"><div class="italic opacity-75 mb-2 ml-2 bg-transparent"><time>2022-03-14</time></div> <h1 class="text-8xl leading-none w-3/4 font-junicode mb-10 ml-1 bg-none">Einsum</h1></div></header> <section class="prose dark:prose-invert prose-a:text-blue-600 dark:prose-a:text-blue-500 hover:prose-a:text-blue-900 hover:dark:prose-a:text-blue-800 dark:prose-pre:border-gray-900 dark:prose-pre:border leading-1 first-letter:text-5xl first-letter:mr-2 first-letter:leading-none first-letter:float-left first-letter:border-solid first-letter:px-1"><!----><p>The basic idea for einstein notation is to drop the <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo></mrow><annotation encoding="application/x-tex">\sum</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span></span></span></span></span> from summations in some cases (reducing notational complexity). For instance, you might want to compute the matrix multiplication between a row vector and a column vector: <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>x</mi><mi>i</mi></msub><mo>∗</mo><msub><mi>y</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum_i x_i * y_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0497em;vertical-align:-0.2997em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.162em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> is <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub><mi>y</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">x_i yi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mord mathnormal">i</span></span></span></span></span> in einsum.</p>
@@ -89,15 +89,15 @@ else:
 			
 			<script>
 				{
-					__sveltekit_8h8r00 = {
+					__sveltekit_193afy0 = {
 						base: new URL("..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../_app/immutable/entry/start.1-Px1jQ5.js"),
-						import("../_app/immutable/entry/app.CzJCVI4t.js")
+						import("../_app/immutable/entry/start.BJJhzdLd.js"),
+						import("../_app/immutable/entry/app.B7FZuyDK.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 3],
