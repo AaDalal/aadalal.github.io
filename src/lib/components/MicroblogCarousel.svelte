@@ -21,7 +21,7 @@
 		{/each}
 		<a
 			href="/t"
-			class="flex-shrink-0 w-72 h-48 dark:bg-orange-800 bg-orange-900/60 p-4 flex items-center justify-center hover:opacity-80 transition-opacity snap-start"
+			class="flex-shrink-0 w-72 h-48 dark:bg-orange-800 bg-orange-900/40 p-4 flex items-center justify-center hover:opacity-80 transition-opacity snap-start"
 		>
 			<span class="text-2xl font-junicode">see all →</span>
 		</a>

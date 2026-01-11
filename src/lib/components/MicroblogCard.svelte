@@ -35,7 +35,7 @@
 <svelte:element
 	this={Tag}
 	href={showFullContent ? undefined : href}
-	class="dark:bg-orange-800 bg-orange-900/60 p-4 flex flex-col {showFullContent ? '' : 'justify-between'} {containerClass}"
+	class="dark:bg-orange-800 bg-orange-900/40 p-4 flex flex-col {showFullContent ? '' : 'justify-between'} {containerClass}"
 >
 	<div class="overflow-hidden {showFullContent ? '' : 'flex-1'} {contentClass}">
 		{#if showFullContent}
@@ -49,8 +49,8 @@
 
 	{#if showFullContent && microblog.context_for_this && microblog.context_for_this.length > 0}
 		<div class="mt-6 pt-4 border-t border-gray-300 dark:border-gray-700">
-			<h4 class="text-sm font-semibold mb-2">Context for this</h4>
-			<ul class="list-none pl-0 text-sm">
+			<h4 class="text-lg font-semibold mb-2 font-junicode">Context for this</h4>
+			<ul class="list-none pl-0 text-lg">
 				{#each microblog.context_for_this as link}
 					<li class="mb-1">
 						<a
@@ -68,8 +68,8 @@
 
 	{#if showFullContent && microblog.further_thinking && microblog.further_thinking.length > 0}
 		<div class="mt-4">
-			<h4 class="text-sm font-semibold mb-2">Further thinking</h4>
-			<ul class="list-none pl-0 text-sm">
+			<h4 class="text-lg font-semibold mb-2 font-junicode">Further thinking</h4>
+			<ul class="list-none pl-0 text-lg">
 				{#each microblog.further_thinking as link}
 					<li class="mb-1">
 						<a

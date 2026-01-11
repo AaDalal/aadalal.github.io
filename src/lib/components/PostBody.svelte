@@ -38,8 +38,8 @@
 
 		{#if context_for_this && context_for_this.length > 0}
 			<div class="mt-8 pt-4 border-t border-gray-300 dark:border-gray-700">
-				<h3 class="text-lg font-semibold mb-2">Context for this</h3>
-				<ul class="list-none pl-0">
+				<h3 class="text-lg font-semibold mb-2 font-junicode">Context for this</h3>
+				<ul class="list-none pl-0 text-lg">
 					{#each context_for_this as link}
 						<li class="mb-1">
 							<a href={link.href} class="text-blue-600 dark:text-blue-500 hover:text-blue-900 hover:dark:text-blue-800">
@@ -53,8 +53,8 @@
 
 		{#if further_thinking && further_thinking.length > 0}
 			<div class="mt-6">
-				<h3 class="text-lg font-semibold mb-2">Further thinking</h3>
-				<ul class="list-none pl-0">
+				<h3 class="text-lg font-semibold mb-2 font-junicode">Further thinking</h3>
+				<ul class="list-none pl-0 text-lg">
 					{#each further_thinking as link}
 						<li class="mb-1">
 							<a href={link.href} class="text-blue-600 dark:text-blue-500 hover:text-blue-900 hover:dark:text-blue-800">
