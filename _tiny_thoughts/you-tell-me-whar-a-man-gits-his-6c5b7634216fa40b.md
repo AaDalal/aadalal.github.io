@@ -1,6 +1,6 @@
 ---
 title: "\"You tell me whar a man gits his"
-date: 2026-01-10
+date: 2026-01-11
 ---
 
 "You tell me whar a man gits his corn pone, en I'll tell you what his 'pinions is."

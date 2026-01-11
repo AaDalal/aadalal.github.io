@@ -1,6 +1,6 @@
 ---
 title: "It's possible to do things slowly and still"
-date: 2026-01-10
+date: 2026-01-11
 context_for_this:
   - link_text: "We are always like fish - the water"
     href: "/t/we-are-always-like-fish---the-water-f602d5d3dee7253b.md"
