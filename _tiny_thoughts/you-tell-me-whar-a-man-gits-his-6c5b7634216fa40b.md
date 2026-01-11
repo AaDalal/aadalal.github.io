@@ -1,5 +1,5 @@
 ---
-title: ""You tell me whar a man gits his"
+title: "\"You tell me whar a man gits his"
 date: 2026-01-10
 ---
 
