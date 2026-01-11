@@ -5,39 +5,38 @@
 		<link rel="icon" href="../favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link href="../_app/immutable/assets/0.BK9NN0ZV.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.DOnz9NcH.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/QR-i5zZ8.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Oz1Ni15G.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/C1N7L7xg.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.DYLM-vw_.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/C0jaiOcI.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BHuit6l-.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DxiNAn5b.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DraYsehv.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.Cb8N1nqN.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/R2FVh9VO.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/3.DIcRgMbt.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Ce8BhDZ-.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Dqn7nYEf.js"><!--xod7dh--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"/><!----><title>Rendevous Hashing | aagam's blog</title>
+		<link href="../_app/immutable/assets/0.CfxTLVOc.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.Dn_szutP.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DDYGUVQi.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/WjKqBSco.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BTykkvGJ.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.BIYk_Zkr.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/z7WzBOfM.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/CY9FYKcK.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BOKyN92P.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.D0ZUXKTU.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/oPucQqzi.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/3.DVGwTW3i.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BFHx90Sw.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DXvFmYx1.js"><!--xod7dh--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"/><!----><title>Rendevous Hashing | aagam's blog</title>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents"><!--[--><!--[--><!----><!--[--><!----><main><div><article class="max-w-2xl mx-auto px-3 mt-4"><header><div class="min-h-20 py-2 flex items-end"><a href="/">← Back</a></div> <div class="dark:bg-orange-800 bg-orange-900/60"><div class="italic opacity-75 mb-2 ml-2 bg-transparent"><time>2023-10-26</time></div> <h1 class="text-8xl leading-none w-3/4 font-junicode mb-10 ml-1 bg-none">Rendevous Hashing</h1></div></header> <section class="prose dark:prose-invert prose-a:text-blue-600 dark:prose-a:text-blue-500 hover:prose-a:text-blue-900 hover:dark:prose-a:text-blue-800 dark:prose-pre:border-gray-900 dark:prose-pre:border leading-1 first-letter:text-5xl first-letter:mr-2 first-letter:leading-none first-letter:float-left first-letter:border-solid first-letter:px-1"><!----><p><em>This is a follow up to my post on <a href="/p/consistent-hashing">Consistent Hashing</a> -- see that first</em></p>
 <p>Consistent hashing is a technique used for distributed hash tables that assigns each key to a server in the network. It does this by hashing everything and assigning each key to the closest succeeding server hash value. Rendevous hashing is the generalization of this concept to assign a key to <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span></span> nodes. You can think about wanting to replicate a file (where it's name is the key) across <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span></span> servers -- you need something more than consistent hashing. Another situation is where you expect that only a small number of nodes will not be part of the network at any given time (e.g., because failure probability is low but non-zero, and nodes come back over time); in this case consistent hashing would require you to rapidly reconstruct each server's mapping from key ranges to servers so that you can still query for the key from any node. Rendevous hashing solves this inefficiency by storing more keys, but preserving the nice properties of load-balancing and consistency that consistent hashing provides..</p>
 <p>The idea behindrendevous hashing is that each server assigns scores to all servers (including itself) for a given key. Then they route the key to the top scorer (or to the top k, if you are rendevous hashing for replication). In particular this scoring set up needs to be <em>consistent</em> in that servers need to be able to agree on their score. It should also be even for load-balancing purposes. The scoring mechanism that fulfills both these things is simply the hash of the server's id concatenated to the key in question.</p>
-<p>Read more on Randorithms.com, who has a much better <a href="https://randorithms.com/2020/12/26/rendezvous-hashing.html">write up</a>.</p><!----></section></article></div><!----></main><!----><!--]--><!----><!--]--> <!--[!--><!--]--><!--]-->
+<p>Read more on Randorithms.com, who has a much better <a href="https://randorithms.com/2020/12/26/rendezvous-hashing.html">write up</a>.</p><!----></section> <!--[!--><!--]--> <!--[!--><!--]--></article></div><!----></main><!----><!--]--><!----><!--]--> <!--[!--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_1ilr7jm = {
+					__sveltekit_thou65 = {
 						base: new URL("..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../_app/immutable/entry/start.DOnz9NcH.js"),
-						import("../_app/immutable/entry/app.DYLM-vw_.js")
+						import("../_app/immutable/entry/start.Dn_szutP.js"),
+						import("../_app/immutable/entry/app.BIYk_Zkr.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 3],
