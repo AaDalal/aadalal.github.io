@@ -1,6 +1,6 @@
 ---
 title: "We are always like fish - the water"
-date: 2026-01-11
+date: 2026-01-15
 further_thinking:
   - link_text: "It's possible to do things slowly and still"
     href: "/t/its-possible-to-do-things-slowly-and-still-73f45c5be20b9e63.md"
