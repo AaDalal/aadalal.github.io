@@ -1,6 +1,6 @@
 ---
 title: "\"You tell me whar a man gits his"
-date: 2026-01-19
+date: 2026-01-20
 further_thinking:
   - link_text: "Listening to “Human Resources” by Dan Carlin, about"
     href: "/t/listening-to-human-resources-by-dan-carlin-about-e836f786366eb58d.md"
