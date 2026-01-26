@@ -1,6 +1,6 @@
 ---
 title: "We are always like fish - the water"
-date: 2026-01-22
+date: 2026-01-26
 further_thinking:
   - link_text: "Relax for the same results - https://sive.rs/relax The"
     href: "/t/relax-for-the-same-results---httpssiversrelax-the-bb404b8942deebb1.md"
