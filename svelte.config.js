@@ -11,6 +11,7 @@ const config = {
 			assets: 'build',
 			fallback: undefined,
 			precompress: false,
+			// error if there is a non-static page
 			strict: true
 		}),
 		paths: {
