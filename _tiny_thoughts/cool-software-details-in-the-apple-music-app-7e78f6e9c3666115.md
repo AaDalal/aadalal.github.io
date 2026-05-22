@@ -1,6 +1,6 @@
 ---
 title: "Cool software details in the Apple Music app"
-date: 2026-01-27
+date: 2026-05-21
 ---
 
 Cool software details in the Apple Music app

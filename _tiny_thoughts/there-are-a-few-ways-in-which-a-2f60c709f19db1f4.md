@@ -1,6 +1,6 @@
 ---
 title: "\"There are a few ways in which a"
-date: 2026-02-02
+date: 2026-05-21
 ---
 
 "There are a few ways in which a man can be more innocently employed than in getting money"

@@ -1,6 +1,6 @@
 ---
 title: "When designing an improvement for a system, you"
-date: 2026-02-27
+date: 2026-05-21
 ---
 
 When designing an improvement for a system, you typically don’t want it to get worse. Good strategy:

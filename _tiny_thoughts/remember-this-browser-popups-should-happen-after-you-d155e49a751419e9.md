@@ -1,6 +1,6 @@
 ---
 title: "\"Remember this browser\" popups should happen after you"
-date: 2026-04-04
+date: 2026-05-21
 ---
 
 "Remember this browser" popups should happen after you log in! There's muscle memory to hit enter after you type your password which means I miss the little checkbox

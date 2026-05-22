@@ -1,6 +1,6 @@
 ---
 title: "something about LLM apis costing money (even though"
-date: 2026-02-28
+date: 2026-05-21
 ---
 
 something about LLM apis costing money (even though it's just a little bit) gets stuck in my craw when using them in tools. I think we will get over this.
