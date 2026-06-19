@@ -5,20 +5,22 @@
 		<link rel="icon" href="../favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link href="../_app/immutable/assets/0.B2qIdcSH.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.DSqXk1T5.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BUpcfwD5.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/WjKqBSco.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BTykkvGJ.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.C_4E4_-5.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/z7WzBOfM.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CY9FYKcK.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BOKyN92P.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.xI6WVgmj.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/oPucQqzi.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/3.DL91LGBd.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BFHx90Sw.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Be_KLNhx.js"><!--xod7dh--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"/><!----><title>Consistent Hashing | aagam's blog</title>
+		<link href="../_app/immutable/assets/0.DZlpzKY3.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.B8ifUbyW.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/B0o6kQjd.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Dt9gh37-.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/C3USEqG5.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.e_QqrHrC.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Nuy0VMy5.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/C13c-Dja.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/GbzkBaI_.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/kjq82cJG.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.B7YTBwfT.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DGl9gWm7.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/4.D1qyHReJ.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/tpI2M0JT.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/rO3ifKBq.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/rXpSIBCT.js"><!--xod7dh--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"/><!----><title>Consistent Hashing | aagam's blog</title>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents"><!--[--><!--[--><!----><!--[--><!----><main><div><article class="max-w-2xl mx-auto px-3 mt-4"><header><div class="min-h-20 py-2 flex items-end"><a href="/">← Back</a></div> <div class="dark:bg-orange-800 bg-orange-900/60"><div class="italic opacity-75 mb-2 ml-2 bg-transparent"><time>2023-10-26</time></div> <h1 class="text-8xl leading-none w-3/4 font-junicode mb-10 ml-1 bg-none">Consistent Hashing</h1></div></header> <section class="prose dark:prose-invert prose-a:text-blue-600 dark:prose-a:text-blue-500 hover:prose-a:text-blue-900 hover:dark:prose-a:text-blue-800 dark:prose-pre:border-gray-900 dark:prose-pre:border leading-1 first-letter:text-5xl first-letter:mr-2 first-letter:leading-none first-letter:float-left first-letter:border-solid first-letter:px-1"><!----><p>Recently I've been reading about the Chord distributed hash table network for a class. The goal of Chord is to map any key (e.g., a file name) to the server that is responsible. This mapping has to be maintained without any centralization: you can ask any server in the network for which other server is responsible for a key, and get an answer, even as servers enter and leave the network as they please. At the core of Chord and most other DHTs is consistent hashing, a beautifully simple idea.</p>
@@ -28,18 +30,18 @@
 			
 			<script>
 				{
-					__sveltekit_15leflp = {
+					__sveltekit_1ytu7rq = {
 						base: new URL("..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../_app/immutable/entry/start.DSqXk1T5.js"),
-						import("../_app/immutable/entry/app.C_4E4_-5.js")
+						import("../_app/immutable/entry/start.B8ifUbyW.js"),
+						import("../_app/immutable/entry/app.e_QqrHrC.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
-							node_ids: [0, 3],
+							node_ids: [0, 4],
 							data: [null,{type:"data",data:{post:{title:"Consistent Hashing",date:"2023-10-26",slug:"consistent-hashing",content:"\u003Cp>Recently I've been reading about the Chord distributed hash table network for a class. The goal of Chord is to map any key (e.g., a file name) to the server that is responsible. This mapping has to be maintained without any centralization: you can ask any server in the network for which other server is responsible for a key, and get an answer, even as servers enter and leave the network as they please. At the core of Chord and most other DHTs is consistent hashing, a beautifully simple idea.\u003C/p>\n\u003Cp>In order for the system to be distributed in an appreciable way, the mapping from keys to servers needs to be somewhat even; in other words any arbitrary set of keys are likely to be evenly distributed among the servers. At the same time, this mapping needs to be consistent: \u003Cstrong>all\u003C/strong> servers need to agree on which server is responsible for key, even as servers come and go and key responsibility is reassigned.\u003C/p>\n\u003Cp>These two requirements are the problem that consistent hashing solves. It provides a way of taking hash values, which are uniformly distributed, and mappping them to servers in a way that is consistent no matter which server is doing the mapping. This is in contrast to the way we do hashing in a hashtable, which requires us to \u003Cem>mod the hash by the size of the table\u003C/em> and thereby introduces a dependence on the number of servers which are in the network at any time. We have no guarantees about the size or composition of the network in the distributed situation, so consistent hashing solves the problem in a way that traditional hashtables can't.\u003C/p>\n\u003Cp>Conceptually, there is no big jump here. We merely compute the hash for each key and then find some consistent way of mapping that to a node. In the case of Chord, we create this assignment by hashing the server identifiers, and then mapping each key hash to the closest succeeding key hash. In this way, each node that knows the other nodes in the network can map a key to a node. No matter if a node leaves or enters, the node will continue to be able to map the key. And no matter how nodes enter and leave, the mapping will be close to uniform. These are powerful properties.\u003C/p>"},allPosts:[{title:"Go fast!",slug:"fast",date:"2024-01-01"},{title:"Consistent Hashing",slug:"consistent-hashing",date:"2023-10-26"},{title:"Rendevous Hashing",slug:"rendevous-hashing",date:"2023-10-26"},{title:"Python Coroutines!?!?",slug:"py-generator-couroutines",date:"2023-06-11"},{title:"Lessons from Product Managing",slug:"PMing",date:"2023-06-01"},{title:"Einsum",slug:"einsum",date:"2022-03-14"},{title:"Entropy",slug:"entropy",date:"2021-12-28"},{title:"Try again with sudo: _sudo",slug:"_sudo",date:"2021-11-11"},{title:"Roku & Competition",slug:"competition-focus",date:"2021-11-11"}]},uses:{params:["slug"]}}],
 							form: null,
 							error: null
