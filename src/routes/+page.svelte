@@ -9,6 +9,15 @@
 	const posts = $derived(data.posts);
 	const microblogs = $derived(data.microblogs);
 
+	const demos = [
+		{
+			title: 'Labeled Box',
+			href: '/labeled-box',
+			description:
+				'A bordered box component with a pill label centered on its top edge, shown across several fonts.'
+		}
+	];
+
 	let search = $state<string>('');
 
 	const filteredPosts = $derived(
@@ -63,7 +72,8 @@
 			</a>
 		</div>
 		<MicroblogCarousel {microblogs} />
-		<div class="flex flex-col mt-10">
+		<h2 class="text-4xl font-junicode mb-4 mt-6">Blog Posts</h2>
+		<div class="flex flex-col">
 			<input
 				class="focus:outline-none text-black bg-black/10 dark:bg-white/10 dark:text-white text-2xl py-1 border-b-2"
 				placeholder="Search"
@@ -82,6 +92,17 @@
 					<div class="opacity-75 leading-1">
 						{preview}
 					</div>
+				</div>
+			{/each}
+		</div>
+		<div class="flex flex-col mt-10">
+			<div class="text-4xl font-junicode mb-2">Demos</div>
+			{#each demos as { title, href, description } (href)}
+				<div class="border-b-2 py-1">
+					<div class="flex flex-row gap-4 items-center mb-1">
+						<a class="text-xl" {href}>{title}</a>
+					</div>
+					<div class="opacity-75 leading-1">{description}</div>
 				</div>
 			{/each}
 		</div>
